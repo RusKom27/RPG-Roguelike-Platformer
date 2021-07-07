@@ -1,0 +1,65 @@
+<!-- <dialogue> - корневой тег
+        <node> - модуль разговора
+            <npctext> - Текст NPC
+                <answers> - тег с ответами
+                    <answer> - вариант ответа. Атрибуты: tonode = "n" переместиться к определённому модулю разговора (список модулей начинается с 0)
+                                                         needquestvalue = "n" появляется только если номер квеста соответствует n
+                                                         questvalue = "n" ставит определённый номер квеста 
+                        <text> - текст ответа
+                        <questname> - Имя квеста
+                        <dialend> - если true, то ответ закончит разговор -->
+<dialogue>
+    <node>
+        <npctext>Ты обычный человек, что ты здесь забыла?</npctext>
+        <answers>
+            <answer tonode = "1"><text>Я ищу своего отца.</text></answer>
+        </answers>
+    </node>
+    <node>
+        <npctext>Как же вы все люди привязаны к друг другу, не можете и дня спокойно прожить и не увидеть такого же себя. Тебе нельзя дальше, видишь ли, здесь царит совсем другое, чем ты себе представляешь.</npctext>
+        <answers>
+            <answer tonode = "2"><text>Если не ты поможешь, то помогут другие.</text><dialend>true</dialend></answer>
+            <answer tonode = "3"><text>Может, есть какие-то способы пройти дальше?</text></answer>
+            <answer tonode = "4"><text>Я знаю о Граале.</text></answer>
+        </answers>
+    </node>
+    <node>
+        <npctext>Хех, ну что?</npctext>
+        <answers>
+            <answer tonode = "3"><text>Здесь никого нет больше, есть какой-то способ выжить в этом лесу?</text></answer>
+            <answer><text>Сама справлюсь.</text><dialend>true</dialend></answer>
+        </answers>
+    </node>
+    <node>
+        <npctext>Есть одно испытание, которое почти все проваливают, особенно такие девочки, как ты, но есть в тебе что-то необычное, твои волосы, видишь ли, люди не зря боятся рыжие волосы, они на самом деле признак чего-то магического. Если сможешь произнести заклинание в книге на странице с синими деревьями, то я помогу тебе, если нет, тогда не смей тревожить меня больше.</npctext>
+        <answers>
+            <answer tonode = "5" questvalue = "1"><text>Я справлюсь.</text><dialend>true</dialend><questname>OldmanQuest1</questname></answer>
+            <answer tonode = "3"><text>Найду что-то попроще.</text><dialend>true</dialend></answer>
+        </answers>
+    </node>
+    <node>
+        <npctext>Грааль Времени? Не пытайся меня обмануть, девчонка, Грааля уже как 1000 лет не существует, его разбили во время войны людей и изгнанных.</npctext>
+        <answers>
+            <answer tonode = "3"> <text>Я не верю в это, я должна сама это узнать, должен же быть способ выжить в вашем мире?</text></answer>
+        </answers>
+    </node>
+    <node>
+        <npctext>Ты сделала то, что я просил?</npctext>
+        <answers>
+            <answer tonode = "7"><text>Нет, как это вообще читается правильно? </text><dialend>true</dialend></answer>
+            <answer tonode = "6" needquestvalue = "2"><text>Да, было сложно, но я нашла то, что нужно.</text><questname>OldmanQuest1</questname></answer>
+        </answers>
+    </node>
+    <node>
+        <npctext>Ты будешь первым человеком, кто смог присоединиться к нам. Сейчас я передам одну из своих ячеек памяти, ею ты сможешь использовать магию. Не подумай, что я просто так её отдал, помнишь то заклинание? Ты мне отдала 10 лет жизни, а могла вообще умереть.</npctext>
+        <answers>
+            <answer tonode = "3" needquestvalue = "2" questvalue = "3"><text>Очень подло, но, думаю, этот лес погубит меня раньше.</text><dialend>true</dialend><questname>OldmanQuest1</questname></answer>
+        </answers>
+    </node>
+    <node>
+        <npctext>Я занят, не мешай.</npctext>
+        <answers>
+            <answer><text>*Уйти*.</text><dialend>true</dialend></answer>
+        </answers>
+    </node>
+</dialogue>
